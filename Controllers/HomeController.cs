@@ -31,13 +31,15 @@ namespace Hotsite.Controllers
                 //tentará executar o que tem aqui dentro
                 DatabaseService dbs = new DatabaseService();
                 dbs.CadastraInteresse(cad);
+                return Json(new {status="OK", mensagem = "Cadastro realizado com sucesso!"});
             }
             catch (Exception e)
             {
                 //aqui realizarei o tratamento de erros
                 _logger.LogError("Erro no cadastro de interesses!!" + e.Message);
+                return Json(new {status="ERRO", mensagem = "Falha no cadastro!"});
             }
-            return View("Index",cad);
+            
         }
 
     }

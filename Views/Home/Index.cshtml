@@ -1,43 +1,216 @@
 ﻿@model Interesse
-@{
-    ViewData["Title"] = "Hotsite";
-}
 
-<div>
-    <h1>Iniciativa Saúde da Cidade</h1>
-    <p>
-        Texto sobre vida saudável: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
-    </p>
-    <p>
-        Texto sobre vida iniciativa: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae hendrerit.
-    </p>
+<div class="container-fluid">
+    <div class="row mt-3">
+        <div class="col-6">
+            <h1>Iniciativa Saúde da Cidade</h1>
+            <p>
+                Texto sobre vida saudável: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae
+                hendrerit.
+            </p>
+            <p>
+                Texto sobre vida iniciativa: Lorem ipsum dolor sit amet et delectus accommodare his consul copiosae
+                legendos at vix ad putent delectus delicata usu. Vidit dissentiet eos cu eum an brute copiosae
+                hendrerit.
+            </p>
+        </div>
+        <div class="col-6">
+            <img src="~/images/saude.jpg" alt="Saude" width="100%" style="border-radius: 15px;">
+        </div>
+    </div>
 </div>
 
-<div>
-    <h2>Entre em contato!:</h2>
-    <p>Nos mande uma mensagem e fique por dentro de nossos eventos</p>
+<div class="row  mt-3">
+    <div class="col-6 border border-dark">
+        <h2>Entre em contato!</h2>
+        <p>Nos mande uma mensagem e fique por dentro de nossos eventos</p>
 
-    <form action="/Home/Cadastrar" method="POST">
-        <div>
-            <label asp-for="Nome">Nome:</label>
-            <input asp-for="Nome" />
-        </div>
-        <div>
-            <label asp-for="Email">Email:</label>
-            <input asp-for="Email" />
-        </div>
-        <div>
-            <label asp-for="Mensagem">Mensagem (opcional):</label>
-            <textarea asp-for="Mensagem"></textarea>
-        </div>
-        <div>
-            <input type="submit" value="Enviar" />
-        </div>
-    </form>
+        <form method="POST" id="frmCadastro">
+            <div class="row">
+                <div class="col-2 justify-content-start">
+                    <label asp-for="Nome">Nome:</label>
+                </div>
+                <div class="col-10 justify-content-end">
+                    <input asp-for="Nome" id="nome"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 justify-content-start">
+                    <label asp-for="Email">Email:</label>
+                </div>
+                <div class="col-10 justify-content-end">
+                    <input asp-for="Email" id="email"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-2 justify-content-start">
+                    <label asp-for="Mensagem">Mensagem (opcional):</label>
+                </div>
+                <div class="col-10 justify-content-end">
+                    <textarea asp-for="Mensagem" id="mensagem"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Enviar" class="col-4 justify-content-center" id="botao"/>
+            </div>
+
+        </form>
+    </div>
+    <div class="col-2 text-center">
+        <figure>
+            <img src="~/images/calendar.jpg" width="100%" style="border-radius: 15px; height: 250px">
+            <figcaption>
+                <a href="#" data-toggle="modal" data-target="#Agenda">Agenda de eventos</a>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="col-2 text-center">
+        <figure>
+            <img src="~/images/fruits.jpg" width="100%" style="border-radius: 15px; height: 250px">
+            <figcaption>
+                <a href="#" data-toggle="modal" data-target="#Dicas">Dicas de vida saudável</a>
+            </figcaption>
+        </figure>
+    </div>
+    <div class="col-2 text-center">
+        <figure>
+            <img src="~/images/team.jpg" width="100%" style="border-radius: 15px; height: 250px">
+            <figcaption>
+                <a href="#" data-toggle="modal" data-target="#Apoiadores">Apoiadores</a>
+            </figcaption>
+        </figure>
+    </div>
 </div>
-
-<div>
-    <a href="#">Agenda de eventos</a>
-    <a href="#">Dicas de vida saudável</a>
-    <a href="#">Apoiadores</a>
+</div>
+</div>
+<div class="modal fade" id="Agenda" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 style="align-items: center;">Agenda</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    10/10/10 10:10 - Evento 1
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde saepe tenetur quaerat dolores pariatur
+                    quae cumque quisquam doloribus libero, molestias eius quam, ut ea quas, error dicta excepturi iste.
+                    Illo.
+                </p>
+                <p>
+                    10/10/10 10:10 - Evento 2
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum, labore dignissimos culpa
+                    earum repudiandae impedit quia magni porro illo dolores, quidem laborum quae alias placeat voluptate
+                    quibusdam ullam sint!
+                </p>
+                <p>
+                    10/10/10 10:10 - Evento 3
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium illum, labore dignissimos culpa
+                    earum repudiandae impedit quia magni porro illo dolores, quidem laborum quae alias placeat voluptate
+                    quibusdam ullam sint!
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Dicas" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 style="align-items: center;">Dicas</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus molestiae illum placeat omnis perspiciatis nostrum fugiat ad suscipit exercitationem illo? Rem soluta corrupti ad optio adipisci at atque ducimus deserunt.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium eveniet quia voluptatibus cupiditate laborum voluptate, veniam quidem perferendis nesciunt hic repudiandae quas deserunt maxime doloremque quae animi nihil perspiciatis sed.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ipsa dicta maxime? Perspiciatis optio inventore facere, eaque dolorum praesentium illo consectetur error suscipit maxime minima? Illo adipisci commodi minima dicta?
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Apoiadores" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 style="align-items: center;">Apoiadores</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-6">
+                        <img src="~/images/logo1.jpg" width="120px" style="height:120px" >
+                    </div>
+                    <div class="col-6">
+                        <p style="font-weight: bold;">
+                            Empresa 1
+                        </p>
+                        <p>
+                            descrição
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="~/images/logo2.jpg" width="120px" style="height:120px" >
+                    </div>
+                    <div class="col-6">
+                        <p style="font-weight: bold;">
+                            Empresa 2
+                        </p>
+                        <p>
+                            descrição
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="~/images/logo3.png" width="120px" style="height:120px" >
+                    </div>
+                    <div class="col-6">
+                        <p style="font-weight: bold;">
+                            Empresa 3
+                        </p>
+                        <p>
+                            descrição
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <img src="~/images/logo4.jpg" width="120px" style="height:120px" >
+                    </div>
+                    <div class="col-6">
+                        <p style="font-weight: bold;">
+                            Empresa 4
+                        </p>
+                        <p>
+                            descrição
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Apoiadores" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 style="align-items: center;">Apoiadores</h4>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+        </div>
+    </div>
 </div>
