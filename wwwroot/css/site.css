@@ -61,6 +61,7 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  background-color: #0366d6;
 }
 .footer {
   position: absolute;
@@ -71,6 +72,3 @@ body {
 }
 
 /* css estilizado */
-body {
-  background-image: linear-gradient(to right, rgb(0, 72, 173) , rgb(0, 0, 36));
-}
